@@ -17,13 +17,13 @@ class Snake:
         self.segments = []
     
     def control(self, event: Event):
-        if event.check('up') and (self.direction[1] == 0 or self.length == 1):
+        if event.check(Event.UP) and (self.direction[1] == 0 or self.length == 1):
             self.direction = (0, -self.size)
-        if event.check('down') and (self.direction[1] == 0 or self.length == 1):
+        if event.check(Event.DOWN) and (self.direction[1] == 0 or self.length == 1):
             self.direction = (0, self.size)
-        if event.check('left') and (self.direction[0] == 0 or self.length == 1):
+        if event.check(Event.LEFT) and (self.direction[0] == 0 or self.length == 1):
             self.direction = (-self.size, 0)
-        if event.check('right') and (self.direction[0] == 0 or self.length == 1):
+        if event.check(Event.RIGHT) and (self.direction[0] == 0 or self.length == 1):
                 self.direction = (self.size, 0)
 
     def delta_time(self):

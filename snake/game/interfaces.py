@@ -33,8 +33,14 @@ class Timer(ABC):
         pass
 
 class Event(ABC):
+    UP = 'up'
+    DOWN = 'down'
+    LEFT = 'left'
+    RIGHT = 'right'
+    QUIT = 'quit'
+
     @abstractmethod
-    def check(self, event_name: str) -> bool:
+    def check(self, event: str) -> bool:
         pass
 
     @abstractmethod

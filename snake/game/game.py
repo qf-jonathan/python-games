@@ -34,7 +34,7 @@ class Game:
 
     def check_event(self):
         self.event.load()
-        if self.event.check('quit'):
+        if self.event.check(Event.QUIT):
             sys.exit()
         self.snake.control(self.event)
         self.event.clear()

@@ -45,20 +45,19 @@ class PygameEvent(Event):
         self.events = set()
         for event in pg.event.get():
             if event.type == pg.QUIT:
-                self.events.add('quit')
+                self.events.add(Event.QUIT)
             if event.type == pg.KEYDOWN:
                 if event.key in [pg.K_w, pg.K_UP]:
-                    self.events.add('up')
+                    self.events.add(Event.UP)
                 if event.key in [pg.K_s, pg.K_DOWN]:
-                    self.events.add('down')
+                    self.events.add(Event.DOWN)
                 if event.key in [pg.K_a, pg.K_LEFT]:
-                    self.events.add('left')
+                    self.events.add(Event.LEFT)
                 if event.key in [pg.K_d, pg.K_RIGHT]:
-                    self.events.add('right')
+                    self.events.add(Event.RIGHT)
 
-    def check(self, event_name: str):
-        return event_name in self.events
+    def check(self, event: str):
+        return event in self.events
     
     def clear(self):
         self.events = None
-
