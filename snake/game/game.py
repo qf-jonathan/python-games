@@ -14,6 +14,7 @@ class Game:
         self.timer = timer
         self.event = event
         self.new_game()
+        self.timer.set_frame_rate(60)
     
     def new_game(self):
         self.food = Food(self.screen, self.TILE_SIZE, self.WINDOW_SIZE)
@@ -23,7 +24,6 @@ class Game:
         self.snake.update()
         if self.snake.check_borders() or self.snake.check_selfeating():
             self.new_game()
-        self.timer.delay(60)
  
     def draw(self):
         self.screen.clear()

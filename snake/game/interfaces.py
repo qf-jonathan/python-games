@@ -25,7 +25,7 @@ class Screen(ABC):
 
 class Timer(ABC):
     @abstractmethod
-    def delay(self, time: int):
+    def set_frame_rate(self, frame_rate: int):
         pass
 
     @abstractmethod

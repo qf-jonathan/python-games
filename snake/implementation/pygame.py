@@ -28,8 +28,8 @@ class PygameTimer(Timer):
     def __init__(self) -> None:
         self.clock = pg.time.Clock()
 
-    def delay(self, time: int):
-        self.clock.tick(time)
+    def set_frame_rate(self, frame_rate: int):
+        self.clock.tick(frame_rate)
     
     def get_current(self):
         return pg.time.get_ticks()
