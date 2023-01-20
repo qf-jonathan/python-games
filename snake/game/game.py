@@ -1,12 +1,10 @@
 import sys
-import pygame as pg
 from game.objects import Snake, Food
 from game.interfaces import Screen, Timer, Event
 
 
 class Game:
     def __init__(self, screen: Screen, timer: Timer, event: Event):
-        pg.init()
         self.WINDOW_SIZE = 1000
         self.TILE_SIZE = 50
         self.screen = screen

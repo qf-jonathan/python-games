@@ -1,5 +1,6 @@
 import pygame as pg
 from typing import Tuple
+from game import Game
 from game.interfaces import Event, Screen, Timer
 
 
@@ -61,3 +62,8 @@ class PygameEvent(Event):
     
     def clear(self):
         self.events = None
+
+class SnakePygame(Game):
+    def __init__(self):
+        pg.init()
+        super().__init__(screen=PygameScreen(), timer=PygameTimer(), event=PygameEvent())
